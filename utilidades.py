@@ -23,26 +23,6 @@ def buscar_CDIA(CDIA: str) -> bool:
 	else:
 		return False
 
-def validar_CDIA(CDIA: str) -> bool:
-  """ 
-	Función encarga de validar si existe un código de CDIA cumple las restricciones
-
-	Parameters
-	-----------------
-	CDIA : str
-		Código de identificación ASCII
-
-	Returns
-	------------------
-	existe : bool
-		Retorna True si cumple, de lo contrario False
-	"""
-	#------------------------------------------------
-	#  
-	#------------------------------------------------
-	# Escribir las validaciones
-
- 
 
 def validar_longitud_CDIA(CDIA: str) -> bool:
   """ 
@@ -211,5 +191,29 @@ def almenos(CDIA: str) -> bool:
     return True
   else:
     return False 
+
+def validar_CDIA(CDIA: str) -> bool:
+  """ 
+	Función encarga de validar si existe un código de CDIA cumple las restricciones
+
+	Parameters
+	-----------------
+	CDIA : str
+		Código de identificación ASCII
+
+	Returns
+	------------------
+	existe : bool
+		Retorna True si cumple, de lo contrario False
+	"""
+	#------------------------------------------------
+	#  Validar
+	#------------------------------------------------
+	# Si cumple las restricciones devuelve True sino False
+  if(buscar_CDIA(CDIA) and validar_longitud_CDIA(CDIA) and convertMin(CDIA).islower() and cont4num(CDIA) and posicion_8_es_raya(CDIA) and segundo_penultimo(CDIA) and count_o(CDIA) and almenos(CDIA)):
+    return True
+  else:
+    return False
+  
 
   
