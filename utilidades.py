@@ -44,8 +44,8 @@ def validar_longitud_CDIA(CDIA: str) -> bool:
 	# Si la longitud del CDIA es 15 
   if len(CDIA)==15:
 	  return True
-	else:
-		return False
+  else:
+    return False
 
 def convertMin(CDIA: str) -> str:
     """ 
@@ -65,8 +65,8 @@ def convertMin(CDIA: str) -> str:
 	# Convertir a minuscula. 
 	#------------------------------------------------
 	# Devuelve el CDIA en minuscula
-  
-  return CDIA.lower()
+    return CDIA.lower()
+
 def cont4num(CDIA: str) -> bool:
   """ 
 	Función encarga de validar si un código de CDIA contiene 4 digitos numericos.
@@ -88,16 +88,16 @@ def cont4num(CDIA: str) -> bool:
 
   contador = 0
   for i in CDIA[i]:
-    if CDIA[i].isnumeric
+    if isnumeric(CDIA[i]):
       contador = contador +1
     
   #------------------------------------------------
 	# Contiene 4 numeros?
 	#------------------------------------------------
 	# Si contador contiene 4 numeros devuelve True sino False 
-    if contador == 4
+    if contador == 4:
       return True
-    else
+    else:
       return False
 def posicion_8_es_raya(CDIA: str) -> bool:
   """ 
@@ -166,12 +166,12 @@ def count_o(CDIA: str) -> bool:
 	#------------------------------------------------
 	#   
   if CDIA.count("o") >= 1:
-  return True
+    return True
   else:
     return False 
 
 def almenos(CDIA: str) -> bool:
-    """ 
+  """ 
 	Función encarga de validar si un código de CDIA contiene "=" o ">" o "@".
 	Parameters
 	-----------------
@@ -187,7 +187,7 @@ def almenos(CDIA: str) -> bool:
 	#  Contiene "=" o ">" o "@"
 	#------------------------------------------------
 	# Revisar si contiene "=" o ">" o "@".
-  if CDIA.find("=") or CDIA.find("?") or CDIA.find("&") :
+  if CDIA.find("=") or CDIA.find("?") or CDIA.find("&"):
     return True
   else:
     return False 
