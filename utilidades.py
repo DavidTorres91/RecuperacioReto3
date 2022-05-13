@@ -191,7 +191,25 @@ def count_o(CDIA: str) -> bool:
     return False 
 
 def almenos(CDIA: str) -> bool:
-    if CDIA.count("=") or CDIA.count("?") or CDIA.count("&") :
-      return True
-    else:
-      return False 
+    """ 
+	Función encarga de validar si un código de CDIA contiene "=" o ">" o "@".
+	Parameters
+	-----------------
+	CDIA : str
+		Código de identificación ASCII
+
+	Returns
+	------------------
+	existe : bool
+		Retorna True si cumple, de lo contrario False
+	"""
+  #------------------------------------------------
+	#  Contiene "=" o ">" o "@"
+	#------------------------------------------------
+	# Revisar si contiene "=" o ">" o "@".
+  if CDIA.find("=") or CDIA.find("?") or CDIA.find("&") :
+    return True
+  else:
+    return False 
+
+  
