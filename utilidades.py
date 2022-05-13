@@ -16,7 +16,7 @@ def buscar_CDIA(CDIA: str) -> bool:
 	"""
 	
     #Lista de usuarios CDIA
-	lista = ["juank@vv+=","carlo@v?+k","mario@kv=+"]
+	lista = ["juank@vv+=","carlo@v?+k","juank@v-1=!154P"]
 
 	if CDIA in lista:
 		return True
@@ -48,7 +48,7 @@ def validar_longitud_CDIA(CDIA: str) -> bool:
     return False
 
 def convertMin(CDIA: str) -> str:
-    """ 
+  """ 
 	Función encarga de convertir un código de CDIA a minusculas
 
 	Parameters
@@ -64,8 +64,11 @@ def convertMin(CDIA: str) -> str:
 	#------------------------------------------------
 	# Convertir a minuscula. 
 	#------------------------------------------------
-	# Devuelve el CDIA en minuscula
-    return CDIA.lower()
+	# Devuelve True des pues de convertir el CDIA en minuscula
+  min = ""
+  for i in range(0,len(CDIA)):
+    min += CDIA[i].lower()
+  return True 
 
 def cont4num(CDIA: str) -> bool:
   """ 
@@ -87,18 +90,17 @@ def cont4num(CDIA: str) -> bool:
 	# Un contador inicia en cero y se incrementa cada ves que una letra de CDIA es numerica. Luego si el contador es cuatro devuelve True sino False 
 
   contador = 0
-  for i in CDIA[i]:
-    if isnumeric(CDIA[i]):
-      contador = contador +1
-    
+  for i in range(0,len(CDIA)-1):
+    if CDIA[i].isnumeric():
+      contador = contador+1
   #------------------------------------------------
 	# Contiene 4 numeros?
 	#------------------------------------------------
 	# Si contador contiene 4 numeros devuelve True sino False 
-    if contador == 4:
-      return True
-    else:
-      return False
+  if contador == 4:
+    return True
+  else:
+    return False
 def posicion_8_es_raya(CDIA: str) -> bool:
   """ 
 	Función encarga de validar si un código de CDIA contiene - en la posicion 8.
@@ -117,7 +119,7 @@ def posicion_8_es_raya(CDIA: str) -> bool:
 	#  Validar 8va posicion 
 	#------------------------------------------------
 	#  Si CDIA en la 8 posicion es "-"
-  if CDIA[8] == "-":
+  if CDIA[7] == "-":
     return True
   else:
     return False 
@@ -141,7 +143,7 @@ def segundo_penultimo(CDIA: str) -> bool:
 	#  Compara el segundo y el penultimo son diferentes   
 	#------------------------------------------------
 	# Si el segundo elemento de CDIA es diferentes al penultimo devuelva TRUE de lo contrario False
-  if CDIA[2] == CDIA[-2]:
+  if CDIA[1] == CDIA[-2]:
     return True
   else:
     return False 
@@ -165,7 +167,7 @@ def count_o(CDIA: str) -> bool:
 	#  Compara el segundo y el penultimo son iguales   
 	#------------------------------------------------
 	#   
-  if CDIA.count("o") >= 1:
+  if CDIA.count("o") <= 1:
     return True
   else:
     return False 
@@ -210,7 +212,7 @@ def validar_CDIA(CDIA: str) -> bool:
 	#  Validar
 	#------------------------------------------------
 	# Si cumple las restricciones devuelve True sino False
-  if(buscar_CDIA(CDIA) and validar_longitud_CDIA(CDIA) and convertMin(CDIA).islower() and cont4num(CDIA) and posicion_8_es_raya(CDIA) and segundo_penultimo(CDIA) and count_o(CDIA) and almenos(CDIA)):
+  if(buscar_CDIA(CDIA)==False and validar_longitud_CDIA(CDIA) and convertMin(CDIA) and cont4num(CDIA)==False and posicion_8_es_raya(CDIA) and segundo_penultimo(CDIA)==False and count_o(CDIA) and almenos(CDIA)):
     return True
   else:
     return False
